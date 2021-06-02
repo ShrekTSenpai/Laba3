@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=cp1251" />
+    <title>Laboratornaya 3</title>
+    <div>
+        <font size="5">
+            <h1 class="Head">
+                <i>Резюме</i>
+            </h1>
+        </font>
+</div>
+    <title>Вывод изображения на HTML страницу </title>
+    <style>
+        .Head{
+            position: relative;
+            left: 100px;
+            top: 10px;
+        }
+        .Head:hover{color:blueviolet}
+        .Info {
+            position: relative;
+            left: 355px;
+            bottom: 355px;
+        }
+        .Info:hover {
+            color: #86e91f
+        }
+        .ChooseBackColor {
+            position: relative;
+            bottom: 5px;
+            width: 100px;
+            height: 30px;
+        }
+        .buttonColor {
+            position: relative;
+            left: 350px;
+            bottom: 50px;
+            height: 50px;
+            width: 100px;
+        }
+        .ChangeInfo {
+            position: relative;
+            bottom: 380px;
+        }
+        .Name {
+            position: relative;
+            bottom: 50px;
+        }
+        .ChangeInfoBtn {
+            position: relative;
+            bottom: 100px;
+            height: 50px;
+            width: 100px;
+        }
+        body{
+            background-color: aqua;
+        }
+    </style>
+
+</head>
+<body id="Body1" >
+    <div class="Base">
+        <img class="Image" src="https://sun9-57.userapi.com/impf/c853620/v853620101/a0bb9/gdlPVUZHm50.jpg?size=807x1431&quality=96&sign=109bd10089ac4761e3b8bb11f000c13a&type=album" width="350" height="350" />
+        <big style="font-size: 40px">
+            
+            <div class="Info">
+                <font face="Arial">
+                    <i id="SurName">Вахрушев</i>
+                    <i id="Name">Александр</i> <br>
+                    АДБ-18-06 <br>
+                    Дата рождения:
+                    <i id="datebirth"> 15 апреля</i> <br>
+                    Город:
+                    <i id="City"> Москва</i>
+                </font>
+                    <div>
+                        <font face="Calibri">
+                            <i>Выбор цвета фона: </i>
+                            <select id="select1" class="ChooseBackColor">
+                                <option value="Лаймовый">Лаймовый</option>
+                                <option value="Синий">Синий</option>
+                                <option value="Зеленый">Зеленый</option>
+                                <option value="Бордовый">Бордовый</option>
+                                <option value="Фиолетовый">Фиолетовый</option>
+                            </select>
+                            <p >
+                                <button class="buttonColor" type="button" onclick="ChangeColor()">Изменить</button>
+                            </p>
+                        </font>
+                    </div>
+            </div>
+            <div class="ChangeInfo">
+                    <p>Введите фамилию: <input type="text" id="userSurname" size="20" /></p>
+                    <p class="Name">Введите имя: <input type="text" id="userName" value="" size="20" /></p>
+                    <button class ="ChangeInfoBtn" type="button" onclick="ChangeName()">Изменить</button>
+            </div>
+    </div>
+    <script>
+        function ChangeName()
+        {
+            if(document.getElementById('userSurname').value == '' || document.getElementById('userName').value == '')
+            {
+                alert("Заполните все поля, пожалуйста!")
+                return;
+            }
+        
+            document.getElementById('SurName').innerHTML=document.getElementById('userSurname').value;
+            document.getElementById('Name').innerHTML=document.getElementById('userName').value;
+        };
+    </script>
+    <script>
+        function ChangeColor()
+        {
+            var select = document.getElementById("select1");
+            var value = select.value;
+        if(value == "Лаймовый")
+        {
+            document.body.style.backgroundColor = "rgb(204,255,0)"
+        }
+        if(value == "Синий")
+        {
+            document.body.style.backgroundColor = "rgb(0,0,255)"
+        }
+        if(value == "Зеленый")
+        {
+            document.body.style.backgroundColor = "rgb(0,255,0)"
+        }
+        if(value == "Бордовый")
+        {
+            document.body.style.backgroundColor = "rgb(155,45,48)"
+        }
+        if(value == "Фиолетовый")
+        {
+            document.body.style.backgroundColor = "rgb(139,0,255)"
+        }
+        
+            
+        }
+    </script>
+</body>
+</html>
